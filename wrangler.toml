@@ -1,6 +1,7 @@
 name = "tg-api-proxy"
 main = "worker.js"
 compatibility_date = "2025-05-25"
+account_id = "daf5cb28dfef9d3b8b583e5f7a8982c3"
 
 [placement]
 mode = "smart"

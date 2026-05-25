@@ -18,21 +18,11 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Check secret presence
-        run: |
-          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
-            echo "::error::CLOUDFLARE_API_TOKEN secret is not set!"
-            exit 1
-          else
-            echo "Token starts with: ${CLOUDFLARE_API_TOKEN:0:7}..."
-            echo "Token length: ${#CLOUDFLARE_API_TOKEN}"
-          fi
-
       - name: Deploy to Cloudflare Workers
-        run: ./node_modules/.bin/wrangler whoami && ./node_modules/.bin/wrangler deploy
+        run: npx wrangler deploy

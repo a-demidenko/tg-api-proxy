@@ -35,8 +35,4 @@ jobs:
           fi
 
       - name: Deploy to Cloudflare Workers
-        run: |
-          echo "--- Testing auth ---"
-          npx wrangler whoami 2>&1
-          echo "--- Deploying ---"
-          npx wrangler deploy 2>&1
+        run: ./node_modules/.bin/wrangler whoami && ./node_modules/.bin/wrangler deploy

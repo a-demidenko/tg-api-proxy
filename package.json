@@ -1,0 +1,13 @@
+{
+  "name": "tg-api-proxy",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cloudflare Worker — proxy requests to Telegram Bot API",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}
